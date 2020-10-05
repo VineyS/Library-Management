@@ -1,7 +1,6 @@
 """===================================================================================="""
 """================================INSTALLING REQUIRED MODULES========================="""
 """===================================================================================="""
-from tkinter.constants import END, LEFT, RIGHT, Y
 import pkg_resources
 import os
 #from functions import add_book
@@ -106,7 +105,7 @@ try:
     mydb
     print("Connection Succeeded")
 except:
-    pass
+    print("MySQL Connectivity Failed!!!!")
 cur=mydb.cursor()
 def connect():
     cur.execute("CREATE DATABASE tetrahedron")
