@@ -8,8 +8,9 @@ Book Management is a program made in Python, This program has been made by using
 5. Time 
 ---
 In this program, you can add, remove, view, exit or reset the database Initally you need to establish connection with MySql default values: host: localhost user: root password: For password, enter the password that you set up during installing / initialization of MySql Thank You
-
+---
 **INSTALLATION**
+
 Type `pip install -r requirements.txt` in Command Prompt
 ---
 **THANK YOU**
