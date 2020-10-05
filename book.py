@@ -1,6 +1,7 @@
 #"""===================================================================================="""
 #"""================================INSTALLING REQUIRED MODULES========================="""
 #"""===================================================================================="""
+from mysql.connector.errors import Error
 import pkg_resources
 import os
 #from functions import add_book
@@ -102,9 +103,9 @@ uname = input("Enter UserName: ")
 p = gp.getpass(prompt="Enter Your MySQL password: ",stream = None)
 mydb = mysql.connector.connect(host=hname,user=uname,passwd=p,auth_plugin='caching_sha2_password')
 try:
-    mydb
-    print("Connection Succeeded")
-except:
+    if mydb:
+        print("Connection Succeeded")
+except Error:
     print("MySQL Connectivity Failed!!!!")
 cur=mydb.cursor()
 def connect():
@@ -113,7 +114,7 @@ def connect():
     cur.execute("CREATE TABLE BOOK(ID int(255) auto_increment,PRIMARY KEY(ID),Book_Name varchar(100),Author varchar(100),ISBN varchar(100),Year varchar(100))")
 try:
     connect()
-except:
+except Error:
     cur.execute("USE tetrahedron")
 
 #"""===================================================================================="""
