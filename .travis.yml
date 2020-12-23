@@ -11,4 +11,4 @@ before_script:
   - pip3 install mysql-connector
   - pip3 install mysql-connector-python
 script:
-  - python3 book.py
+  - python3 -m pytest book.py
